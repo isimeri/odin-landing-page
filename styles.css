@@ -4,6 +4,7 @@
     --bg-neutral: #e5e7eb;
     --text-light: #f9faf8;
     --text-dark: #1f2937;
+    --card-bg: #00718d;
 }
 *{
     margin: 0;
@@ -19,7 +20,7 @@ section{
 .header-section{
     padding-top: 0;
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--bg-neutral);
 }
 nav{
     display: flex;
@@ -28,13 +29,29 @@ nav{
     max-width: 100rem;
     margin: 0 auto;
 }
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+nav img{
+    height: 50px;
+}
+.image-by a{
+    text-decoration: none;
+    color: var(--bg-accent);
+}
 .nav-list{
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     list-style-type: none;
 }
+.nav-list > li{
+    display: flex;
+    align-items: center;
+}
 .nav-link{
-    color: white;
+    color: var(--bg-neutral);
     text-decoration: none;
 }
 .header-section-body{
@@ -51,26 +68,173 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2rem;
 }
 h1{
     font-size: 4rem;
+    color: var(--text-light);
 }
-.header-section-body > img{
+.header-section-body p{
+    line-height: 1.8;
+}
+.header-section-body > figure{
     flex: 1 1 400px;
-    border: 1px solid yellow;
+    max-width: 600px;
+}
+figure{
+    position: relative;
+}
+figure > img{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+figcaption, .image-by{
+    font-size: 12px;
+}
+.card figure > img{
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+    /* opacity: 0.5; */
+    transition: all 0.5s ease-in-out;
+}
+.card figcaption{
+    position: absolute;
+    bottom: 5px;
+    z-index: 1;
+}
+.card figure:hover img{
+    bottom: 20px;
 }
 
 .btn{
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.8rem;
     background-color: var(--bg-accent);
     color: white;
     border-radius: 5px;
     border: none;
     outline: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.2s ease-in-out;
+}
 
+.info-section{
+    padding: 4rem 5%;
+    color: var(--text-dark);
+}
+.info-section > h2{
+    max-width: 100rem;
+    margin: 0 auto;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    font-size: 3rem;
+}
+.info-section > h4{
+    color:hsl(215, 8%, 57%);
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+.info-section del{
+    color: hsl(215, 18%, 37%);
+}
+.card-wrapper{
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+}
+.card{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: none;
+}
+.card img{
+    background-color: var(--card-bg);
+    height: 250px;
+    border-radius: 5px;
+}
+.card > p{
+    text-align: center;
+}
+
+.quote-section{
+    background-color: var(--bg-neutral);
+    padding: 4rem 5%;
+    display: flex;
+}
+.quote-section > blockquote{
+    /* border: 1px solid green; */
+    max-width: 100rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem
+}
+.quote-text{
+    font-size: 24px;
+    font-style: italic;
+}
+.quote-author{
+    align-self: flex-end;
+}
+
+.action-section{
+    padding: 4rem 5%;
+    color: var(--bg-neutral);
+}
+.action-card{
+    background-color: var(--bg-accent);
+    max-width: 100rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.action-card > .text{
+    flex: 1 1 auto;
+
+}
+.action-card h3{
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 22px;
+}
+.action-card p{
+    line-height: 1.6;
+}
+.action-card > .btn{
+    flex: none;
+    border: 2px solid white;
+}
+
+.btn:hover{
+    background-color: var(--text-light);
+    color: var(--bg-accent);
+    cursor: pointer;
 }
 
 footer{
     background-color: var(--bg-dark);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    color: var(--bg-neutral);
+}
+footer a, figcaption a{
+    color: var(--bg-accent);
+    text-decoration: none;
+}
+footer a:hover{
+    color: hsl(217, 91%, 69%);;
 }
